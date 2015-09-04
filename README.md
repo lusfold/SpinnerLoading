@@ -12,9 +12,11 @@
 
 #### Preview
 
-![]()
+![](preview.png)
 
+![](preview.gif)
 
+Inspired by [spinner-loader-gooey-light-effect](http://www.materialup.com/posts/spinner-loader-gooey-light-effect)
 
 #### Dependency
 
