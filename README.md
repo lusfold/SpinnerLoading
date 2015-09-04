@@ -1,3 +1,5 @@
+[![Android Gems](http://www.android-gems.com/badge/lusfold/SpinnerLoading.svg?branch=master)](http://www.android-gems.com/lib/lusfold/SpinnerLoading)
+
 # AWebDB
 
 ------
