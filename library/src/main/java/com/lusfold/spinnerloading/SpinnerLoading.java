@@ -19,7 +19,6 @@ import java.util.ArrayList;
 
 /**
  * @author <a href="http://www.lusfold.com" target="_blank">Lusfold</a>
- * @date 9/4/15.
  */
 public class SpinnerLoading extends View implements CallbackAnimation.TransformationListener {
     public static final int DEFAULT_DURATION = 1200;

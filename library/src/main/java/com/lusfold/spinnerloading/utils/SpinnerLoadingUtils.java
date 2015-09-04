@@ -2,7 +2,6 @@ package com.lusfold.spinnerloading.utils;
 
 /**
  * @author <a href="http://www.lusfold.com" target="_blank">Lusfold</a>
- * @date 9/4/15.
  */
 public class SpinnerLoadingUtils {
     public static  float[] getVector(float radians, float length) {
