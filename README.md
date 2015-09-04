@@ -1,6 +1,7 @@
-SpinnerLoading
+#SpinnerLoading
 
-------
+
+[![Android Gems](http://www.android-gems.com/badge/lusfold/SpinnerLoading.svg?branch=master)](http://www.android-gems.com/lib/lusfold/SpinnerLoading)
 
 [![build passing](https://img.shields.io/badge/build-passing-green.svg?style=flat)](https://bintray.com/lusfold/maven/AWebDB/view)
 
