@@ -1,6 +1,7 @@
 package com.lusfold.spinnerloading;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -21,10 +22,10 @@ import java.util.ArrayList;
  * @author <a href="http://www.lusfold.com" target="_blank">Lusfold</a>
  */
 public class SpinnerLoading extends View implements CallbackAnimation.TransformationListener {
-    public static final int DEFAULT_DURATION = 1200;
+    public static final int DEFAULT_DURATION = 20200;
     public static final int DEFAULT_itemCount = 8;
     public static final int DEFAULT_CIRCLE_COLOR = 0xff33A7ff;
-    public static final int DEFAULT_CIRCLE_COLOR_OUT = 0x8033A7ff;
+    public static final int DEFAULT_CIRCLE_COLOR_MOVE = 0x8033A7ff;
     public static final float DEFAULT_SCALE_RATE = 0.2f;
     public static final int DEFAULT_RADIUS = 20;
     public static final int DEFAULT_WIDTH_FACTOR = 14;
@@ -38,6 +39,8 @@ public class SpinnerLoading extends View implements CallbackAnimation.Transforma
     private ArrayList<Circle> circlePaths = new ArrayList<>();
     private float mInterpolatedTime;
     private CallbackAnimation callbackAnimation;
+    private int circleColor;
+    private int circleColorMove;
     private float width;
     private float preFac1;
     private float preFac2;
@@ -55,8 +58,10 @@ public class SpinnerLoading extends View implements CallbackAnimation.Transforma
 
     public SpinnerLoading(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SpinnerLoading);
+        circleColor = typedArray.getColor(R.styleable.SpinnerLoading_circle_color, DEFAULT_CIRCLE_COLOR);
+        circleColorMove = typedArray.getColor(R.styleable.SpinnerLoading_circle_color_move, DEFAULT_CIRCLE_COLOR_MOVE);
         init();
-
     }
 
     @Override
@@ -68,7 +73,8 @@ public class SpinnerLoading extends View implements CallbackAnimation.Transforma
 
     private void init() {
         pi2 = (float) (Math.PI / 2);
-        paint.setColor(DEFAULT_CIRCLE_COLOR);
+
+        paint.setColor(circleColor);
         paint.setStyle(Paint.Style.FILL);
         paint.setAntiAlias(true);
 
@@ -97,10 +103,12 @@ public class SpinnerLoading extends View implements CallbackAnimation.Transforma
         }
 
         if (j == 1) {
-            paint.setShader(new RadialGradient(center1[0], center1[1], radius * 2, DEFAULT_CIRCLE_COLOR_OUT, Color.TRANSPARENT, Shader.TileMode.CLAMP));
+            paint.setShader(new RadialGradient(center1[0], center1[1], radius * 2, circleColorMove, Color.TRANSPARENT, Shader.TileMode.CLAMP));
             canvas.drawCircle(center1[0], center1[1], radius1 * 3, paint);
             paint.setShader(null);
+            paint.setColor(circleColorMove);
             canvas.drawCircle(center1[0], center1[1], radius1, paint);
+            paint.setColor(circleColor);
         }
 
         canvas.drawCircle(center2[0], center2[1], radius2, paint);
