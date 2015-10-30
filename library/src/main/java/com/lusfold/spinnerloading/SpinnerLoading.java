@@ -22,10 +22,10 @@ import java.util.ArrayList;
  * @author <a href="http://www.lusfold.com" target="_blank">Lusfold</a>
  */
 public class SpinnerLoading extends View implements CallbackAnimation.TransformationListener {
-    public static final int DEFAULT_DURATION = 20200;
+    public static final int DEFAULT_DURATION = 2000;
     public static final int DEFAULT_itemCount = 8;
     public static final int DEFAULT_CIRCLE_COLOR = 0xff33A7ff;
-    public static final int DEFAULT_CIRCLE_COLOR_MOVE = 0x8033A7ff;
+    public static final int DEFAULT_CIRCLE_COLOR_MOVE = 0xff33A7ff;
     public static final float DEFAULT_SCALE_RATE = 0.2f;
     public static final int DEFAULT_RADIUS = 20;
     public static final int DEFAULT_WIDTH_FACTOR = 14;
@@ -47,13 +47,11 @@ public class SpinnerLoading extends View implements CallbackAnimation.Transforma
     private float pi2;
 
     public SpinnerLoading(Context context) {
-        super(context);
-        init();
+        this(context, null);
     }
 
     public SpinnerLoading(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init();
+        this(context, attrs,0);
     }
 
     public SpinnerLoading(Context context, AttributeSet attrs, int defStyleAttr) {
