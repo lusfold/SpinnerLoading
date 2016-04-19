@@ -23,7 +23,7 @@ Inspired by [spinner-loader-gooey-light-effect](http://www.materialup.com/posts/
 
 ``` gradle
 dependencies {
-compile 'com.lusfold.spinnerloading:spinnerloading:1.0.0'
+compile 'com.lusfold.spinnerloading:library:1.0.0'
 }
 ```
 
